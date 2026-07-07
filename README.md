@@ -38,7 +38,6 @@ src
 ├── exception
 ├── repository
 ├── service
-│   └── impl
 └── config
 ```
 
