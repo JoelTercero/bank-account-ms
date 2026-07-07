@@ -1,41 +1,123 @@
-# Bank Account Microservice
+# Bank Account Management API
 
-Spring Boot REST API for managing bank accounts.
+REST API developed with **Spring Boot** for managing bank accounts.
 
-## Technologies
+This project demonstrates the implementation of:
+
+- Layered Architecture
+- Spring Data JPA
+- Bean Validation
+- Global Exception Handling
+- OpenAPI / Swagger
+- Docker
+
+---
+
+## 🚀 Technologies
 
 - Java 17
-- Spring Boot
+- Spring Boot 4.1
 - Spring Data JPA
 - H2 Database
+- Spring Validation
 - Lombok
+- OpenAPI / Swagger
+- Docker
+- Maven
 
-## Endpoints
+---
 
-POST /accounts
+## 📁 Project Structure
 
-GET /accounts
+```
+src
+├── controller
+├── dto
+├── entity
+├── enums
+├── exception
+├── repository
+├── service
+│   └── impl
+└── config
+```
 
-GET /accounts/{id}
+---
 
-PUT /accounts/{id}/block
+## 📌 REST Endpoints
 
-## Running
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/accounts` | Create a new bank account |
+| GET | `/accounts` | Retrieve all accounts |
+| GET | `/accounts/{id}` | Retrieve an account by ID |
+| PUT | `/accounts/{id}/block` | Block an account |
 
+---
+
+## ▶️ Running the application
+
+### Using Maven
+
+```bash
 ./mvnw spring-boot:run
+```
 
-## H2 Console
+---
 
+### Using Docker
+
+Build the image
+
+```bash
+docker build -t bank-account-ms .
+```
+
+Run the container
+
+```bash
+docker run -p 8080:8080 bank-account-ms
+```
+
+---
+
+## 📖 Swagger UI
+
+After starting the application, open:
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+---
+
+## 💾 H2 Database
+
+H2 Console:
+
+```
 http://localhost:8080/h2-console
+```
 
+Connection:
+
+```
+JDBC URL:
 jdbc:h2:mem:bankdb
 
-username: sa
+Username:
+sa
 
-password:
+Password:
+(empty)
+```
 
-## Postman
+---
+
+## 📮 Postman
 
 Import the collection located in:
 
-postman/
+```
+postman/bank-account-ms.postman_collection.json
+```
